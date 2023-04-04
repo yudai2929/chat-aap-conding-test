@@ -1,4 +1,5 @@
 import { Message } from "./Message"
+import { User } from "./User"
 
 export type ChatRoom = {
   roomId: string
@@ -8,4 +9,5 @@ export type ChatRoom = {
   createdAt: Date
   updatedAt: Date
   latestMessage?: Message
+  users: User[]
 }
