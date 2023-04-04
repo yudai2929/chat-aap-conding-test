@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { ButtonVBlack } from "./VBlack"
 
 export default {
-  title: "ui/Button/VBlack",
+  title: "ui/common/Button/VBlack",
   component: ButtonVBlack,
   parameters: {
     layout: "fullscreen",
