@@ -26,7 +26,7 @@ export const Header = () => {
         <HStack spacing={4}>
           <IconButton aria-label="Search database" icon={<AiFillHome size={24} color="gray" />} bg="white" />
           <IconButton aria-label="Search database" icon={<BsFillChatDotsFill size={24} color="gray" />} bg="white" />
-          <Avatar src={user?.imageProfileUrl} size={"sm"} />
+          <Avatar src={user.imageProfileUrl} size={"sm"} />
         </HStack>
       ) : (
         <ButtonVPrimary onClick={onClickLogin}>ログイン</ButtonVPrimary>
