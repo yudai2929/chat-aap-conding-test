@@ -1,10 +1,10 @@
 import { Card, CardBody, Image, Stack, Text, Heading, CardFooter, HStack, Avatar, VStack } from "@chakra-ui/react"
 import React from "react"
-import { User } from "../../../../entities/User"
-import { ChatRoom } from "../../../../entities/ChatRoom"
-import { ButtonVPrimary } from "../../common/Button/VPrimary"
-import { ButtonDPrimary } from "../../common/Button/DPrimary"
-import { convertDateToString } from "../../../../utils/libs/convertDateToString"
+import { User } from "../../../../../entities/User"
+import { ChatRoom } from "../../../../../entities/ChatRoom"
+import { ButtonVPrimary } from "../../../common/Button/VPrimary"
+import { ButtonDPrimary } from "../../../common/Button/DPrimary"
+import { convertDateToString } from "../../../../../utils/libs/convertDateToString"
 
 type Props = {
   chatRoom: ChatRoom

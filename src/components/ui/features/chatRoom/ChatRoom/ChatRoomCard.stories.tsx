@@ -1,10 +1,10 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { ChatRoomCard } from "./ChatRoomCard"
-import { ChatRoom } from "../../../../entities/ChatRoom"
+import { ChatRoom } from "../../../../../entities/ChatRoom"
 import { title } from "process"
-import { User } from "../../../../entities/User"
-import { defaultImageUrl } from "../../../../entities/factories/UserFactory"
+import { User } from "../../../../../entities/User"
+import { defaultImageUrl } from "../../../../../entities/factories/UserFactory"
 
 export default {
   title: "ui/features/ChatRoom",
