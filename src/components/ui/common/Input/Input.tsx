@@ -1,6 +1,6 @@
-import React from "react";
-import { Input as CInput, InputProps } from "@chakra-ui/react";
+import React from "react"
+import { Input as CInput, InputProps, forwardRef } from "@chakra-ui/react"
 
-export const Input = ({ ...props }: InputProps) => {
-  return <CInput {...props} focusBorderColor={"primary"} />;
-};
+export const Input = forwardRef<InputProps, "input">((props, ref) => {
+  return <CInput {...props} focusBorderColor={"primary"} rounded={"sm"} ref={ref} />
+})
