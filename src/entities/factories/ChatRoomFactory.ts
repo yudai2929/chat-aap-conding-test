@@ -2,7 +2,7 @@ import { generateId } from "../../utils/libs/generateId"
 import { ChatRoom } from "../ChatRoom"
 import { User } from "../User"
 
-export type ChatRoomParams = {
+type ChatRoomParams = {
   title: string
   description: string
   imagePath?: string

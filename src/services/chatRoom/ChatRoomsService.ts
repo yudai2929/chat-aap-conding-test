@@ -1,6 +1,6 @@
 import { ChatRoom } from "../../entities/ChatRoom"
 import { User } from "../../entities/User"
-import { ChatRoomParams } from "../../entities/factories/ChatRoomFactory"
+import { ChatRoomParams } from "./ChatRoomParams"
 
 export interface ChatRoomsService {
   save(params: ChatRoomParams): Promise<void>
