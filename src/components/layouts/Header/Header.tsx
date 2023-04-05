@@ -3,10 +3,11 @@ import React from "react"
 import { ButtonVPrimary } from "../../ui/common/Button/VPrimary"
 import { useRouter } from "next/router"
 import { HEADER_HEIGHT } from "./constants"
-import { pagesPath } from "../../../lib/$path"
+
 import { useUser } from "../../../store/useUser"
 import { BsFillChatDotsFill } from "react-icons/bs"
 import { AiFillHome } from "react-icons/ai"
+import { pagesPath } from "../../../utils/$path"
 
 export const Header = () => {
   const router = useRouter()
@@ -17,6 +18,9 @@ export const Header = () => {
   const onClickLogin = () => {
     router.push(pagesPath.login.$url())
   }
+  const onClickChat = () => {
+    router.push(pagesPath.rooms.$url())
+  }
   return (
     <HStack px={8} py={2} boxShadow="md" height={HEADER_HEIGHT} justifyContent={"space-between"} as={"header"}>
       <Heading color={"primary"} cursor={"pointer"} onClick={onClickTop} fontSize={"2xl"}>
@@ -24,8 +28,18 @@ export const Header = () => {
       </Heading>
       {user ? (
         <HStack spacing={4}>
-          <IconButton aria-label="Search database" icon={<AiFillHome size={24} color="gray" />} bg="white" />
-          <IconButton aria-label="Search database" icon={<BsFillChatDotsFill size={24} color="gray" />} bg="white" />
+          <IconButton
+            onClick={onClickChat}
+            aria-label="Search database"
+            icon={<AiFillHome size={24} color="gray" />}
+            bg="white"
+          />
+          <IconButton
+            onClick={onClickChat}
+            aria-label="Search database"
+            icon={<BsFillChatDotsFill size={24} color="gray" />}
+            bg="white"
+          />
           <Avatar src={user.imageProfileUrl} size={"sm"} />
         </HStack>
       ) : (
