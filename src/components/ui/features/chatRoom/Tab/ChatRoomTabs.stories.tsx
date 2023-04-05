@@ -12,5 +12,12 @@ export default {
 } as ComponentMeta<typeof ChatRoomTabs>
 
 export const Default: ComponentStory<typeof ChatRoomTabs> = () => {
-  return <ChatRoomTabs allRooms={[mockChatRoom, mockChatRoom2]} myRooms={[mockChatRoom]} joinRoom={() => {}} />
+  return (
+    <ChatRoomTabs
+      allRooms={[mockChatRoom, mockChatRoom2]}
+      myRooms={[mockChatRoom]}
+      joinRoom={() => {}}
+      leaveRoom={() => {}}
+    />
+  )
 }
