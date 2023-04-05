@@ -5,4 +5,5 @@ export type Message = {
   roomId: string
   createdAt: Date
   senderUser: User
+  text: string
 }
