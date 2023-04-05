@@ -1,7 +1,9 @@
+import { Timestamp } from "firebase/firestore"
+
 export type UserDocument = {
   name: string
   email: string
-  createdAt: Date
-  updatedAt: Date
+  createdAt: Timestamp
+  updatedAt: Timestamp
   imageProfileUrl: string
 }

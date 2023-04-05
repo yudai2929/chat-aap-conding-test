@@ -2,7 +2,7 @@ import { VStack, Text } from "@chakra-ui/react"
 import React from "react"
 import { ButtonDPrimary } from "../ui/common/Button/DPrimary"
 import { useRouter } from "next/router"
-import { pagesPath } from "../../lib/$path"
+import { pagesPath } from "../../utils/$path"
 
 export const TopPage = () => {
   const router = useRouter()

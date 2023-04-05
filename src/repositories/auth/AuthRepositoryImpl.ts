@@ -13,6 +13,11 @@ class AuthRepositoryImpl implements AuthRepository {
   public logout = async () => {
     return signOut(auth)
   }
+
+  public getUid = (): string | undefined => {
+    const user = auth.currentUser
+    return user?.uid
+  }
 }
 
 export const authRepository = new AuthRepositoryImpl()

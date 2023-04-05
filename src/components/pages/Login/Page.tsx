@@ -4,7 +4,7 @@ import { GoogleIcon } from "../../../icons/Google"
 import { LoginButton } from "../../ui/features/login/LoginButton"
 import { useLogin } from "../../../utils/hooks/auth/useLogin"
 import { useRouter } from "next/router"
-import { pagesPath } from "../../../lib/$path"
+import { pagesPath } from "../../../utils/$path"
 
 export const LoginPage = () => {
   const { mutate: login } = useLogin()

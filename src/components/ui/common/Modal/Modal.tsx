@@ -1,4 +1,4 @@
-import React, { ComponentProps } from "react";
+import React, { ComponentProps } from "react"
 import {
   Modal as CModal,
   ModalOverlay,
@@ -8,11 +8,9 @@ import {
   ModalBody,
   ModalCloseButton,
   Button,
-} from "@chakra-ui/react";
+} from "@chakra-ui/react"
 
-type Props = { modalFooter: React.ReactNode; title: string } & ComponentProps<
-  typeof CModal
->;
+type Props = { modalFooter?: React.ReactNode; title: string } & ComponentProps<typeof CModal>
 
 export const Modal = ({ children, title, ...props }: Props) => {
   return (
@@ -25,5 +23,5 @@ export const Modal = ({ children, title, ...props }: Props) => {
         <ModalFooter>{props.modalFooter}</ModalFooter>
       </ModalContent>
     </CModal>
-  );
-};
+  )
+}
