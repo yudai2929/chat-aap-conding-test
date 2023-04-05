@@ -8,9 +8,11 @@ import { convertDateToString } from "../../../../../utils/libs/convertDateToStri
 
 type Props = {
   chatRoom: ChatRoom
+  onClickJoin: () => void
+  onClickLeave: () => void
 } & React.ComponentProps<typeof Card>
 
-export const ChatRoomCard = ({ chatRoom, ...props }: Props) => {
+export const ChatRoomCard = ({ chatRoom, onClickJoin, onClickLeave, ...props }: Props) => {
   return (
     <Card direction={{ base: "column", sm: "row" }} overflow="hidden" variant="outline" {...props}>
       <Image objectFit="cover" maxW={{ base: "100%", sm: "200px" }} src={chatRoom.imagePath} alt={chatRoom.title} />
@@ -23,16 +25,18 @@ export const ChatRoomCard = ({ chatRoom, ...props }: Props) => {
             <Text fontSize={"sm"} color={"gray.500"}>
               作成日:{convertDateToString(chatRoom.createdAt)}
             </Text>
-            {chatRoom.users.map((user: User) => (
-              <Avatar src={user.imageProfileUrl} key={user.userId} size={"xs"} />
-            ))}
+            <HStack>
+              {chatRoom.users.map((user: User) => (
+                <Avatar src={user.imageProfileUrl} key={user.userId} size={"xs"} />
+              ))}
+            </HStack>
           </VStack>
         </CardBody>
 
         <CardFooter>
           <HStack w="full" justifyContent={"end"}>
-            <ButtonVPrimary>退出する</ButtonVPrimary>
-            <ButtonDPrimary>入室する</ButtonDPrimary>
+            <ButtonVPrimary onClick={onClickLeave}>退出する</ButtonVPrimary>
+            <ButtonDPrimary onClick={onClickJoin}>入室する</ButtonDPrimary>
           </HStack>
         </CardFooter>
       </Stack>
