@@ -8,10 +8,13 @@ import { useUser } from "../../../store/useUser"
 import { BsFillChatDotsFill } from "react-icons/bs"
 import { AiFillHome } from "react-icons/ai"
 import { pagesPath } from "../../../utils/$path"
+import { useLogOut } from "../../../utils/hooks/auth/useLogOut"
+import { AvatarPopover } from "./AvatarPopover"
 
 export const Header = () => {
   const router = useRouter()
   const { user } = useUser()
+  const { mutateAsync: logOut } = useLogOut()
   const onClickTop = () => {
     router.push(pagesPath.$url())
   }
@@ -20,6 +23,10 @@ export const Header = () => {
   }
   const onClickChat = () => {
     router.push(pagesPath.rooms.$url())
+  }
+  const onClickLogOut = async () => {
+    await logOut()
+    router.push(pagesPath.$url())
   }
   return (
     <HStack px={8} py={2} boxShadow="md" height={HEADER_HEIGHT} justifyContent={"space-between"} as={"header"}>
@@ -31,16 +38,10 @@ export const Header = () => {
           <IconButton
             onClick={onClickChat}
             aria-label="Search database"
-            icon={<AiFillHome size={24} color="gray" />}
-            bg="white"
-          />
-          <IconButton
-            onClick={onClickChat}
-            aria-label="Search database"
             icon={<BsFillChatDotsFill size={24} color="gray" />}
             bg="white"
           />
-          <Avatar src={user.imageProfileUrl} size={"sm"} />
+          <AvatarPopover user={user} signOut={onClickLogOut} />
         </HStack>
       ) : (
         <ButtonVPrimary onClick={onClickLogin}>ログイン</ButtonVPrimary>
