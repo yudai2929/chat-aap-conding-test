@@ -9,11 +9,13 @@ import { useCreateMessage } from "../../../../utils/hooks/message/useMutationMes
 import { useUser } from "../../../../store/useUser"
 import { useFetchMessage } from "../../../../utils/hooks/message/useFetchMessage"
 import { ChatMessage } from "../../../ui/features/chat/Message"
+import { useSp } from "../../../../utils/hooks/useSp"
 
 interface Props {
   roomId: string
 }
 export const RoomDetailPage = ({ roomId }: Props) => {
+  const { isSp } = useSp()
   const { data: myRooms = [], refetch: refetchMine } = useFetchMyChatRooms()
   const { user } = useUser()
   const { mutate: sendMessage } = useCreateMessage()
@@ -39,16 +41,18 @@ export const RoomDetailPage = ({ roomId }: Props) => {
 
   return (
     <HStack px={4} py={8} h={"full"} alignItems={"start"}>
-      <VStack spacing={0}>
-        {myRooms.map(room => (
-          <ChatRoomPanel
-            chatRoom={room}
-            isActive={roomId === room.roomId}
-            key={room.roomId}
-            onClick={() => onClickPanel(room.roomId)}
-          />
-        ))}
-      </VStack>
+      {isSp || (
+        <VStack spacing={0}>
+          {myRooms.map(room => (
+            <ChatRoomPanel
+              chatRoom={room}
+              isActive={roomId === room.roomId}
+              key={room.roomId}
+              onClick={() => onClickPanel(room.roomId)}
+            />
+          ))}
+        </VStack>
+      )}
       <Box w="full" h={"full"} position={"relative"}>
         <VStack spacing={4} overflow={"scroll"} h={"80vh"}>
           {messages.map(message => (
