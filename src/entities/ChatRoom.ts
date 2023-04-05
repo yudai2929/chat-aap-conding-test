@@ -11,3 +11,13 @@ export type ChatRoom = {
   latestMessage?: Message
   users: User[]
 }
+
+export const joinUser = (user: User, chatRoom: ChatRoom): ChatRoom => {
+  const users = [...chatRoom.users, user]
+  return { ...chatRoom, users }
+}
+
+export const leaveUser = (userId: string, chatRoom: ChatRoom): ChatRoom => {
+  const users = chatRoom.users.filter(u => u.userId !== userId)
+  return { ...chatRoom, users }
+}
