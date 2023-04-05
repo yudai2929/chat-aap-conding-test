@@ -1,10 +1,10 @@
 import { ChatRoom, joinUser, leaveUser } from "../../entities/ChatRoom"
 import { User } from "../../entities/User"
-import { ChatRoomFactory, ChatRoomParams } from "../../entities/factories/ChatRoomFactory"
+import { ChatRoomFactory } from "../../entities/factories/ChatRoomFactory"
 import { authRepository } from "../../repositories/auth/AuthRepositoryImpl"
 import { chatRoomRepository } from "../../repositories/chatRoom/ChatRoomRepositoryImpl"
-import { userRepository } from "../../repositories/user/UserRepositoryImpl"
 import { myRoomRepository } from "../../repositories/user/myRoom/MyRoomRepositoryImpl"
+import { ChatRoomParams } from "./ChatRoomParams"
 import { ChatRoomsService } from "./ChatRoomsService"
 
 class ChatRoomsServiceImpl implements ChatRoomsService {
