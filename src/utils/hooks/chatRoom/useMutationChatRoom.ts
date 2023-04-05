@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query"
 import { chatRoomsService } from "../../../services/chatRoom/ChatRoomsServiceImpl"
-import { ChatRoomParams } from "../../../entities/factories/ChatRoomFactory"
 import { useUser } from "../../../store/useUser"
+import { ChatRoomParams } from "../../../services/chatRoom/ChatRoomParams"
 
 export const useCreateChatRoom = () => {
   return {
