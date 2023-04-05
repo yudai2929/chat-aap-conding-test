@@ -54,7 +54,7 @@ export const RoomsPage = () => {
     })
   }
   return (
-    <VStack h={"full"} alignContent={"start"} w="full" pt={12} px={48}>
+    <VStack h={"full"} alignContent={"start"} w="full" pt={12} px={{ base: 4, md: 48 }}>
       <HStack w="full" justifyContent={"space-between"}>
         <Text fontSize={"2xl"}>ルーム一覧</Text>
         <ButtonVPrimary onClick={onOpen}>ルーム作成</ButtonVPrimary>
