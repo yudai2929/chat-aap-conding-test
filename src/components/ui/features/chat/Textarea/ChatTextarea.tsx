@@ -16,7 +16,7 @@ export const ChatTextarea = ({ onSubmit }: Props) => {
     textRef.current.value = ""
   }
   return (
-    <HStack as="form" onSubmit={event => handleSubmit(event)}>
+    <HStack as="form" onSubmit={event => handleSubmit(event)} w={"full"}>
       <Input ref={textRef} />
       <ButtonDPrimary type="submit">
         <RiSendPlane2Fill size={20} />

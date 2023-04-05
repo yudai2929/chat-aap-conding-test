@@ -21,3 +21,7 @@ export const leaveUser = (userId: string, chatRoom: ChatRoom): ChatRoom => {
   const users = chatRoom.users.filter(u => u.userId !== userId)
   return { ...chatRoom, users }
 }
+
+export const updateLatestMessage = (message: Message, chatRoom: ChatRoom): ChatRoom => {
+  return { ...chatRoom, latestMessage: message }
+}

@@ -10,7 +10,15 @@ type Props = {
 
 export const ChatRoomPanel = ({ chatRoom, isActive, ...props }: Props) => {
   return (
-    <HStack bg={isActive ? "gray.50" : "white"} p={2} _hover={{ bgColor: "gray.50" }} cursor={"pointer"} {...props}>
+    <HStack
+      bg={isActive ? "gray.100" : "white"}
+      p={2}
+      _hover={{ bgColor: "gray.100" }}
+      cursor={"pointer"}
+      {...props}
+      justifyContent={"start"}
+      w={"324px"}
+    >
       <Avatar src={chatRoom.imagePath} />
       <VStack spacing={0} alignItems={"start"}>
         <Text fontSize={"md"}>{chatRoom.title}</Text>
