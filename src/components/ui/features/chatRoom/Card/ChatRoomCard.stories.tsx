@@ -12,5 +12,5 @@ export default {
 } as ComponentMeta<typeof ChatRoomCard>
 
 export const Default: ComponentStory<typeof ChatRoomCard> = () => {
-  return <ChatRoomCard chatRoom={mockChatRoom} />
+  return <ChatRoomCard chatRoom={mockChatRoom} onClickJoin={() => {}} onClickLeave={() => {}} />
 }
