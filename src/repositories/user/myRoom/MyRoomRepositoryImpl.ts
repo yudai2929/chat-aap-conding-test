@@ -9,7 +9,6 @@ class MyRoomRepositoryImpl implements MyRoomRepository {
     return res.docs.map(doc => doc.id)
   }
   public save = async (userId: string, roomId: string): Promise<void> => {
-    console.log(roomId, userId)
     const userMyRoomRef = doc(db, `users/${userId}/myRooms`, roomId)
     await setDoc(userMyRoomRef, { roomId })
   }
