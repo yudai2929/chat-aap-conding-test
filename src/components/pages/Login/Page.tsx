@@ -7,10 +7,10 @@ import { useRouter } from "next/router"
 import { pagesPath } from "../../../utils/$path"
 
 export const LoginPage = () => {
-  const { mutate: login } = useLogin()
+  const { mutateAsync: login } = useLogin()
   const router = useRouter()
   const onClickLogin = async () => {
-    login()
+    await login()
     router.push(pagesPath.rooms.$url())
   }
   return (
