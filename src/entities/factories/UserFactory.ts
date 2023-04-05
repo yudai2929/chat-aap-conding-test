@@ -1,7 +1,7 @@
 import { UserCredential } from "firebase/auth"
 import { User } from "../User"
 
-export const defaultImageUrl = "https://bit.ly/dan-abramov"
+export const defaultImageUrl = "https://bit.ly/broken-links"
 
 export const userFactory = {
   create: (user: UserCredential): User => {

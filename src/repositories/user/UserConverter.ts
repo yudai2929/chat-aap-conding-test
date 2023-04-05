@@ -22,7 +22,7 @@ export const userConverter = {
       createdAt: data.createdAt.toDate(),
       updatedAt: data.updatedAt.toDate(),
       imageProfileUrl: data.imageProfileUrl,
-    } as User
+    }
     return user
   },
 }

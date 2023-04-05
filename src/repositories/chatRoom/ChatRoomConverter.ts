@@ -21,7 +21,6 @@ export const chatRoomConverter = {
       latestMessage: chatRoom.latestMessage
         ? {
             messageId: chatRoom.latestMessage.messageId,
-            roomId: chatRoom.latestMessage.roomId,
             createdAt: Timestamp.fromDate(chatRoom.latestMessage.createdAt),
             senderUser: {
               userId: chatRoom.latestMessage.senderUser.userId,
@@ -57,7 +56,6 @@ export const chatRoomConverter = {
       latestMessage: data.latestMessage
         ? {
             messageId: data.latestMessage.messageId,
-            roomId: data.latestMessage.roomId,
             createdAt: data.latestMessage.createdAt.toDate(),
             senderUser: {
               userId: data.latestMessage.senderUser.userId,

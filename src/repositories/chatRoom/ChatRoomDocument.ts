@@ -8,7 +8,6 @@ export type ChatRoomDocument = {
   updatedAt: Timestamp
   latestMessage: {
     messageId: string
-    roomId: string
     createdAt: Timestamp
     senderUser: {
       userId: string

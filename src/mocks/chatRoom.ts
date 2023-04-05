@@ -1,4 +1,5 @@
 import { ChatRoom } from "../entities/ChatRoom"
+import { mockMessage } from "./message"
 import { mockUser } from "./user"
 
 export const mockChatRoom: ChatRoom = {
@@ -10,6 +11,7 @@ export const mockChatRoom: ChatRoom = {
   createdAt: new Date(),
   updatedAt: new Date(),
   users: [mockUser],
+  latestMessage: mockMessage,
 }
 
 export const mockChatRoom2: ChatRoom = {
